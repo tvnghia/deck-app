@@ -1,0 +1,43 @@
+.card {
+  background-color: var(--cl-yellow-1);
+  width: 200px;
+  border: 2px solid var(--cl-white);
+  padding: 16px;
+}
+
+.cardImages {
+  margin-bottom: 32px;
+  position: relative;
+  height: 100px;
+}
+
+.cardImage {
+  width: 80px;
+  height: 112px;
+  border-radius: 4px;
+
+  position: absolute;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+  }
+
+  &:nth-child(3) {
+    right: 0;
+  }
+}
+
+.cardInfo {
+  text-align: center;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 8px;
+}

@@ -1,0 +1,6 @@
+@import './reset';
+@import './variable.global.scss';
+
+body {
+  background-color: var(--cl-primary);
+}

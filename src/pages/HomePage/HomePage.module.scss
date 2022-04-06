@@ -1,0 +1,51 @@
+.root {
+  padding: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.headline {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--cl-white);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.gameContainer {
+  display: grid;
+  grid-template-areas:
+    'user1 user1 user1 user1'
+    'user2 user2 user3 user3'
+    'user4 user4 user4 user4';
+  gap: 10px;
+
+  & > div {
+    margin: auto;
+  }
+}
+
+$users: (
+  '1': user1,
+  '2': user2,
+  '3': user3,
+  '4': user4,
+);
+
+@each $key, $val in $users {
+  .user#{$key} {
+    grid-area: $val;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.deckCardButton {
+  text-align: center;
+  margin-top: 32px;
+}
