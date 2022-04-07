@@ -5,9 +5,11 @@ export const usePopup = () => {
   const [message, setMessage] = useState<string>('')
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setVisible(false)
     }, 3000)
+
+    return () => clearTimeout(timeout)
   }, [visible])
 
   return {

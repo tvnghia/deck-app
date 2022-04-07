@@ -1,4 +1,3 @@
-import { SPECIAL_CARD } from '@/constants/deck'
 import { IPlayer } from '@/contexts/player'
 import { CARD_POINT } from '@/enums/card.enum'
 import { ICard } from '@/interfaces/base'
@@ -32,7 +31,7 @@ const handleAddCardPlayer = (currentPlayers: IPlayer[], cards: ICard[][]) => {
     const playerCards = cards.shift() || []
     const point = playerCards.reduce((acc: number, card: ICard) => {
       // @ts-ignore
-      return acc + (SPECIAL_CARD.includes(card.value) ? CARD_POINT[card.value] : Number(card.value))
+      return acc + (Object.keys(CARD_POINT).includes(card.value) ? CARD_POINT[card.value] : Number(card.value))
     }, 0)
     player.point = point % 10
     player.cards = playerCards

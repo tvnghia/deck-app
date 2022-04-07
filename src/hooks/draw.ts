@@ -7,9 +7,9 @@ import axios from '@/shell/axios'
 import { useContext, useMemo, useState } from 'react'
 
 export const useDraw = () => {
-  const { deckId, setRemainingCards } = useContext(DeckContext)
+  const { deckId } = useContext(DeckContext)
   const [isDisabledDraw, setIsDisabledDraw] = useState<boolean>(false)
-  const { players, setPlayers } = useContext(PlayerContext)
+  const { players, setPlayers, setRemainingCards } = useContext(PlayerContext)
   const canPlayablePlayers = useMemo(() => players.filter((item) => item.canPlayable).length, [players])
   const [loading, setLoading] = useState<boolean>(false)
 

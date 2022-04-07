@@ -15,11 +15,10 @@ import { usePopup } from '@/hooks/popup'
 
 const HomePage: FC = () => {
   const { getDeck, loading: deckLoading } = useDeck()
-  const { remainingCards } = useContext(DeckContext)
   const { isFlipped, setIsFlipped } = useRevealCard()
   const { shuffle, loading: shuffleLoading } = useShuffle()
   const { loading: drawLoading, draw, isDisabledDraw, setIsDisabledDraw, canPlayablePlayers } = useDraw()
-  const { players, setPlayers } = useContext(PlayerContext)
+  const { players, setPlayers, remainingCards } = useContext(PlayerContext)
   const { visible, setVisible, message, setMessage } = usePopup()
 
   const isCannotDraw = useMemo(

@@ -1,6 +1,5 @@
 import { COIN_PER_GAME, MAX_CARDS } from '@/constants/deck'
-import { DeckContext } from '@/contexts/deck'
-import { IPlayer } from '@/contexts/player'
+import { IPlayer, PlayerContext } from '@/contexts/player'
 import { usePopup } from '@/hooks/popup'
 import { FC, useContext, useEffect, useMemo } from 'react'
 import Popup from '../Popup'
@@ -12,7 +11,7 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ isFlipped = false, player }) => {
-  const { remainingCards } = useContext(DeckContext)
+  const { remainingCards } = useContext(PlayerContext)
   const { visible, setVisible, message, setMessage } = usePopup()
   const isRip = useMemo(() => player.coin < COIN_PER_GAME, [player])
 

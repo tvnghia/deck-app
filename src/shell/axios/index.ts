@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import axios, { AxiosRequestConfig } from 'axios'
 
-axios.defaults.baseURL = 'https://deckofcardsapi.com/api/deck'
+axios.defaults.baseURL = import.meta.env.VITE_API_ENDPOINT as string
 
 axios.interceptors.request.use(
   (config: AxiosRequestConfig) => {
