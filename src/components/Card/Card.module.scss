@@ -3,6 +3,15 @@
   width: 200px;
   border: 2px solid var(--cl-white);
   padding: 16px;
+  position: relative;
+}
+
+.labelImgCard {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-radius: 8px;
+  transform: rotate(-30deg);
 }
 
 .cardImages {
@@ -15,7 +24,6 @@
   width: 80px;
   height: 112px;
   border-radius: 4px;
-
   position: absolute;
 
   &:first-child {
@@ -31,6 +39,14 @@
   &:nth-child(3) {
     right: 0;
   }
+}
+
+.waitingImg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
 
 .cardInfo {

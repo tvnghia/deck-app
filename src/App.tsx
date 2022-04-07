@@ -2,6 +2,8 @@ import MainLayout from '@/layouts/MainLayout'
 import HomePage from '@/pages/HomePage'
 import { Switch } from 'react-router-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { DeckContextProvider } from './contexts/deck'
+import { PlayerContextProvider } from './contexts/player'
 
 function App() {
   return (
@@ -9,7 +11,11 @@ function App() {
       <MainLayout>
         <Switch>
           <Route path="/" exact>
-            <HomePage />
+            <DeckContextProvider>
+              <PlayerContextProvider>
+                <HomePage />
+              </PlayerContextProvider>
+            </DeckContextProvider>
           </Route>
         </Switch>
       </MainLayout>

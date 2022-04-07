@@ -1,0 +1,15 @@
+.root {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 16px;
+  background-color: var(--cl-white);
+  width: 384px;
+  z-index: 1010;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 600;
+}

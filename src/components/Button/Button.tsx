@@ -6,10 +6,14 @@ interface ButtonProps {
   children: React.ReactNode
   type?: 'primary' | 'dark' | 'warning' | 'secondary' | 'danger'
   size?: 'lg' | 'md' | 'sm'
+  disabled?: boolean
+  onClick?: React.MouseEventHandler<HTMLElement>
 }
 
-const Button: FC<ButtonProps> = ({ type, size = 'md', children }) => (
-  <button className={clsx(s.root, type, size)}>{children}</button>
+const Button: FC<ButtonProps> = ({ type, size = 'md', children, ...props }) => (
+  <button className={clsx(s.root, type, size)} {...props}>
+    {children}
+  </button>
 )
 
 export default Button
