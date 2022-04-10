@@ -19,7 +19,7 @@ export const INIT_PLAYER: IPlayer[] = ['A', 'B', 'C', 'D'].map((item) => ({
   coin: INIT_COIN,
   cards: [],
   canPlayable: true,
-  point: INIT_COIN,
+  point: 0,
   isWinner: false,
 }))
 

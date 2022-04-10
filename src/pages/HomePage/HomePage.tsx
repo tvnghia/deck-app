@@ -87,7 +87,9 @@ const HomePage: FC = () => {
 
   const handleReset = () => {
     setPlayers(INIT_PLAYER)
-    handleShuffle()
+    shuffle()
+    setIsFlipped(false)
+    setIsDisabledDraw(false)
   }
 
   return (
